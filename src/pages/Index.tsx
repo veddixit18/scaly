@@ -5,12 +5,14 @@ import StarfieldBackground from "../components/StarfieldBackground";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-transparent text-white">
+    <>
       <StarfieldBackground />
-      <Navbar />
-      <Hero />
-      <Features />
-    </div>
+      <div className="relative min-h-screen">
+        <Navbar />
+        <Hero />
+        <Features />
+      </div>
+    </>
   );
 };
 
