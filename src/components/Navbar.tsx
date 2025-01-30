@@ -1,14 +1,15 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
     { name: "Features", href: "#features" },
-    { name: "Solutions", href: "#solutions" },
-    { name: "Pricing", href: "#pricing" },
-    { name: "Resources", href: "#resources" },
+    { name: "Solutions", href: "/solutions" },
+    { name: "Pricing", href: "/pricing" },
+    { name: "Resources", href: "/resources" },
   ];
 
   return (
@@ -16,22 +17,22 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <a href="/" className="text-2xl font-bold text-primary">
-              SalesForge
-            </a>
+            <Link to="/" className="text-2xl font-bold text-primary">
+              Scaly.ai
+            </Link>
           </div>
 
           {/* Desktop menu */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-8">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.href}
                   className="text-neutral hover:text-primary transition-colors duration-200"
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
               <button className="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-colors duration-200">
                 Get Started
@@ -55,13 +56,13 @@ const Navbar = () => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.href}
                   className="block text-neutral hover:text-primary px-3 py-2 transition-colors duration-200"
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
               <button className="w-full bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg mt-4 transition-colors duration-200">
                 Get Started
